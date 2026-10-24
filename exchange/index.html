@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Матвей Грицик · Академическая мобильность Университета ИТМО</title>
+<meta name="description" content="Матвей Грицик — студент Университета ИТМО. Личный опыт академической мобильности: семестр в Özyeğin University, Стамбул.">
+<link rel="icon" href="favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Матвей Грицик · Семестр в Стамбуле">
+<meta property="og:description" content="Личный опыт академической мобильности Университета ИТМО: семестр в Özyeğin University, Стамбул.">
+<meta property="og:image" content="https://matvei.pro/exchange/assets/campus.jpg">
+<meta name="theme-color" content="#0c0d0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0d0a;
+  --bg2:#111210;
+  --card:#161813;
+  --card-hi:#1c1f18;
+  --line:rgba(170,255,0,.14);
+  --line-hi:rgba(170,255,0,.5);
+  --acid:#aaff00;
+  --acid-dim:#88cc00;
+  --white:#f4f5f0;
+  --mut:#8b8d84;
+  --mut2:#5d5f57;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Manrope',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--acid);color:#0c0d0a}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* grain overlay */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+  opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px;
+  transition:background .35s ease,backdrop-filter .35s ease,border-color .35s ease,padding .35s ease;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{
+  background:rgba(12,13,10,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  padding:13px 28px;
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:15px;letter-spacing:.02em}
+.logo .mark{
+  width:34px;height:34px;border-radius:9px;
+  background:var(--acid);color:#0c0d0a;
+  display:grid;place-items:center;
+  font-family:'Unbounded';font-weight:700;font-size:14px;
+}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:14px;font-weight:600;color:var(--mut);transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-tg{
+  background:var(--acid);color:#0c0d0a !important;
+  padding:9px 18px;border-radius:50px;font-weight:700;font-size:13px;
+  transition:transform .2s,box-shadow .2s;
+}
+.nav-tg:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(170,255,0,.3)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:.25s}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;
+  padding:130px 0 70px;
+  overflow:hidden;
+}
+.hero-glow{
+  position:absolute;top:-260px;left:50%;transform:translateX(-50%);
+  width:1100px;height:900px;pointer-events:none;
+  background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(170,255,0,.13),transparent 70%);
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(170,255,0,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(170,255,0,.045) 1px,transparent 1px);
+  background-size:62px 62px;
+  -webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 40%,#000 30%,transparent 78%);
+          mask-image:radial-gradient(ellipse 75% 65% at 50% 40%,#000 30%,transparent 78%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;
+  width:100%;
+}
+/* avatar */
+.ava-box{position:relative;justify-self:center;width:340px;height:340px}
+.ava-ring{
+  position:absolute;inset:-22px;border-radius:50%;
+  border:1.5px dashed rgba(170,255,0,.4);
+  animation:spin 28s linear infinite;
+}
+.ava-ring::before{
+  content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);
+  width:11px;height:11px;border-radius:50%;background:var(--acid);
+  box-shadow:0 0 14px var(--acid);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ava-glow{
+  position:absolute;inset:-30px;border-radius:50%;
+  background:radial-gradient(circle,rgba(170,255,0,.35),transparent 68%);
+  filter:blur(14px);
+}
+.ava-box img{
+  position:relative;width:340px;height:340px;border-radius:50%;
+  border:3px solid rgba(170,255,0,.85);
+}
+.ava-tag{
+  position:absolute;bottom:8px;right:-12px;z-index:3;
+  background:var(--acid);color:#0c0d0a;
+  font-weight:800;font-size:12px;letter-spacing:.04em;
+  padding:8px 15px;border-radius:50px;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);
+}
+/* hero text */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;font-weight:700;letter-spacing:.16em;
+  color:var(--acid);text-transform:uppercase;margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--acid)}
+.hero h1{
+  font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(44px,7.2vw,86px);line-height:.98;
+  letter-spacing:-.01em;text-transform:uppercase;
+}
+.hero h1 .lime{color:var(--acid)}
+.hero-tag{
+  margin-top:24px;font-size:17px;color:var(--mut);
+  font-weight:500;max-width:480px;line-height:1.6;
+}
+.hero-tag b{color:var(--white);font-weight:600}
+.hero-btns{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-weight:700;font-size:15px;border-radius:50px;
+  padding:15px 28px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;
+  border:2px solid transparent;
+}
+.btn-fill{background:var(--acid);color:#0c0d0a}
+.btn-fill:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(170,255,0,.32)}
+.btn-out{background:transparent;color:var(--acid);border-color:rgba(170,255,0,.55)}
+.btn-out:hover{background:var(--acid);color:#0c0d0a;transform:translateY(-3px)}
+
+/* ---------- SECTIONS ---------- */
+section{position:relative}
+.sec{padding:110px 0}
+.sec-alt{background:var(--bg2)}
+.sec-head{margin-bottom:54px;max-width:760px}
+.sec-label{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;font-weight:700;letter-spacing:.16em;
+  color:var(--acid);text-transform:uppercase;margin-bottom:16px;
+}
+.sec-label .num{
+  font-family:'Unbounded';font-weight:700;
+  opacity:.55;
+}
+.sec-label::before{content:"";width:22px;height:1.5px;background:var(--acid)}
+.sec-title{
+  font-family:'Unbounded',sans-serif;font-weight:700;
+  font-size:clamp(30px,4.6vw,52px);line-height:1.05;
+  text-transform:uppercase;letter-spacing:-.005em;
+}
+.sec-sub{
+  margin-top:18px;font-size:19px;line-height:1.55;
+  color:var(--acid);font-weight:600;
+}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:22px;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.card-pad{padding:38px}
+.about-text p{font-size:17px;line-height:1.78;color:#cdcfc6}
+.about-text p b{color:var(--white);font-weight:700}
+.divider{height:1px;background:rgba(255,255,255,.07);margin:28px 0}
+.hobbies{display:flex;flex-wrap:wrap;gap:10px}
+.pill{
+  background:rgba(170,255,0,.07);border:1px solid rgba(170,255,0,.22);
+  border-radius:50px;padding:9px 16px;font-size:14px;font-weight:600;
+  transition:background .2s,transform .2s;
+}
+.pill:hover{background:rgba(170,255,0,.16);transform:translateY(-2px)}
+.about-photo{
+  position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+  min-height:430px;
+}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.about-photo:hover img{transform:scale(1.04)}
+.photo-chip{
+  position:absolute;top:18px;left:18px;z-index:2;
+  background:var(--acid);color:#0c0d0a;font-weight:800;font-size:12px;letter-spacing:.04em;
+  padding:8px 14px;border-radius:50px;box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.about-photo .cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:22px;font-size:13px;font-weight:600;color:var(--white);
+  background:linear-gradient(transparent,rgba(12,13,10,.92));
+}
+.about-photo .cap span{color:var(--acid)}
+
+/* ---------- MOBILITY ---------- */
+.mob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mob-card{padding:34px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.mob-card .idx{
+  font-family:'Unbounded';font-weight:700;font-size:13px;
+  color:var(--acid);opacity:.6;margin-bottom:auto;
+}
+.mob-icon{
+  width:58px;height:58px;border-radius:14px;
+  background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.25);
+  display:grid;place-items:center;font-size:28px;margin:18px 0 20px;
+}
+.mob-card h3{
+  font-family:'Unbounded';font-weight:500;font-size:20px;
+  margin-bottom:12px;line-height:1.2;
+}
+.mob-card p{font-size:15px;line-height:1.65;color:var(--mut)}
+.mob-card::after{
+  content:"";position:absolute;right:-40px;bottom:-40px;
+  width:130px;height:130px;border-radius:50%;
+  background:radial-gradient(circle,rgba(170,255,0,.12),transparent 70%);
+  opacity:0;transition:opacity .35s;
+}
+.mob-card:hover::after{opacity:1}
+
+/* ---------- ISTANBUL ---------- */
+.facts{
+  display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 46px;
+}
+.fact{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:50px;padding:11px 20px;font-size:14px;font-weight:600;
+}
+.fact b{color:var(--acid);font-weight:700}
+.video-block{margin-bottom:46px}
+.video-head{margin-bottom:18px}
+.vlabel{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:700;letter-spacing:.12em;
+  color:var(--acid);text-transform:uppercase;margin-bottom:10px;
+}
+.video-head h3{
+  font-family:'Unbounded';font-weight:500;font-size:clamp(20px,2.6vw,26px);
+  line-height:1.25;
+}
+.video-frame{
+  position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line-hi);
+  box-shadow:0 0 44px rgba(170,255,0,.09);
+  background:#000;
+}
+.video-frame video{
+  display:block;width:100%;height:auto;
+  aspect-ratio:1280/704;object-fit:cover;
+}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shot{
+  position:relative;border-radius:16px;overflow:hidden;
+  border:1px solid var(--line);aspect-ratio:3/4;
+  transition:transform .35s ease,border-color .35s ease;
+}
+.shot img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.shot:hover{border-color:var(--line-hi)}
+.shot:hover img{transform:scale(1.07)}
+.shot .scap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:34px 16px 14px;font-size:12.5px;font-weight:600;
+  color:var(--white);
+  background:linear-gradient(transparent,rgba(12,13,10,.9));
+  transform:translateY(8px);opacity:0;transition:.3s;
+}
+.shot:hover .scap{transform:translateY(0);opacity:1}
+.shot .pin{
+  position:absolute;top:12px;left:12px;z-index:2;
+  width:9px;height:9px;border-radius:50%;background:var(--acid);
+  box-shadow:0 0 0 4px rgba(170,255,0,.18);
+}
+.esn{
+  margin-top:16px;position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);
+}
+.esn img{width:100%;height:380px;object-fit:cover}
+.esn .ecap{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:46px 28px 22px;
+  background:linear-gradient(transparent,rgba(12,13,10,.93));
+  font-size:15px;font-weight:600;
+}
+.esn .ecap span{color:var(--acid)}
+
+/* ---------- STORY ---------- */
+.story-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-bottom:22px}
+.story-text p{font-size:17px;line-height:1.78;color:#cdcfc6}
+.story-text p+p{margin-top:16px}
+.story-text p b{color:var(--white);font-weight:700}
+.quote-card{
+  padding:38px;display:flex;flex-direction:column;justify-content:space-between;gap:26px;
+  background:linear-gradient(160deg,rgba(170,255,0,.1),var(--card) 60%);
+  border-color:rgba(170,255,0,.3);
+}
+.quote-mark{font-family:'Unbounded';font-weight:900;font-size:72px;line-height:.7;color:var(--acid)}
+.quote-card blockquote{
+  font-family:'Unbounded';font-weight:500;font-size:clamp(19px,2.1vw,23px);line-height:1.38;
+}
+.quote-card blockquote span{color:var(--acid)}
+.quote-by{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.sub-head{
+  font-family:'Unbounded';font-weight:500;font-size:clamp(20px,2.6vw,26px);
+  line-height:1.25;margin:62px 0 22px;
+}
+.sub-head span{color:var(--acid)}
+.skills-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.skill{grid-column:span 2;padding:30px;position:relative;overflow:hidden}
+.skill:nth-child(4),.skill:nth-child(5){grid-column:span 3}
+.skill .idx{font-family:'Unbounded';font-weight:700;font-size:30px;color:var(--acid);line-height:1;margin-bottom:18px;display:block}
+.skill h4{font-family:'Unbounded';font-weight:500;font-size:18px;line-height:1.25;margin-bottom:10px}
+.skill p{font-size:15px;line-height:1.65;color:var(--mut)}
+.skill:hover,.advice:hover{border-color:var(--line-hi)}
+.advice-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:62px}
+.advice{padding:36px}
+.advice .vlabel{margin-bottom:14px}
+.advice p{font-size:16px;line-height:1.7;color:#cdcfc6}
+.advice p+p{margin-top:12px}
+.advice .big{font-family:'Unbounded';font-weight:500;font-size:clamp(19px,2.1vw,22px);line-height:1.4;color:var(--white)}
+.advice .big span{color:var(--acid)}
+
+/* ---------- TIMELINE ---------- */
+.timeline{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:9px;height:1.5px;background:linear-gradient(90deg,var(--line-hi),var(--line))}
+.tl-item{position:relative;padding-top:34px}
+.tl-item::before{
+  content:"";position:absolute;top:3px;left:0;width:13px;height:13px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--acid);
+}
+.tl-hi::before{background:var(--acid);box-shadow:0 0 14px var(--acid)}
+.tl-date{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acid)}
+.tl-item h4{font-family:'Unbounded';font-weight:500;font-size:16px;line-height:1.3;margin:10px 0 8px}
+.tl-item p{font-size:14px;line-height:1.6;color:var(--mut)}
+.tl-hi h4{color:var(--acid)}
+
+/* ---------- LIFE / GALLERY ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:-20px 0 30px}
+.chip{
+  font:inherit;font-size:14px;font-weight:700;cursor:pointer;
+  background:var(--card);color:var(--mut);border:1px solid var(--line);
+  padding:10px 18px;border-radius:50px;transition:background .2s,color .2s,border-color .2s,transform .2s;
+}
+.chip:hover{color:var(--white);border-color:var(--line-hi);transform:translateY(-2px)}
+.chip.on{background:var(--acid);color:#0c0d0a;border-color:var(--acid)}
+.masonry{columns:4 240px;column-gap:16px}
+.m-tile{
+  break-inside:avoid;margin:0 0 16px;position:relative;border-radius:16px;overflow:hidden;
+  border:1px solid var(--line);cursor:zoom-in;background:var(--card);
+  transition:border-color .3s,opacity .3s;
+}
+.m-tile img{width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.m-tile:hover{border-color:var(--line-hi)}
+.m-tile:hover img{transform:scale(1.05)}
+.m-tile figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;
+  font-size:12.5px;font-weight:600;background:linear-gradient(transparent,rgba(12,13,10,.9));
+  opacity:0;transform:translateY(8px);transition:.3s;
+}
+.m-tile:hover figcaption{opacity:1;transform:none}
+.m-tile.hide{display:none}
+.lightbox{
+  position:fixed;inset:0;z-index:2000;background:rgba(8,9,7,.94);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;padding:60px 70px;
+  opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox figure{max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lightbox img{max-width:100%;max-height:calc(100vh - 150px);border-radius:14px;object-fit:contain}
+.lightbox figcaption{font-size:15px;font-weight:600;color:var(--white);text-align:center}
+.lb-btn{
+  position:absolute;width:48px;height:48px;border-radius:50%;cursor:pointer;
+  background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.35);color:var(--acid);
+  font-size:26px;line-height:1;display:grid;place-items:center;transition:background .2s,color .2s;
+}
+.lb-btn:hover{background:var(--acid);color:#0c0d0a}
+.lb-close{top:18px;right:18px;font-size:18px}
+.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+
+/* ---------- RESUME ---------- */
+.resume-link{
+  display:inline-flex;align-items:center;gap:9px;margin-top:26px;
+  font-weight:700;font-size:15px;color:var(--acid);
+  border-bottom:1.5px solid rgba(170,255,0,.4);padding-bottom:3px;
+  transition:border-color .2s,gap .2s;
+}
+.resume-link:hover{border-color:var(--acid);gap:13px}
+
+/* ---------- TELEGRAM ---------- */
+.tg-card{
+  max-width:720px;margin:0 auto;text-align:center;
+  padding:52px 44px;position:relative;overflow:hidden;
+  border-color:rgba(170,255,0,.28);
+}
+.tg-card .glow2{
+  position:absolute;top:-120px;left:50%;transform:translateX(-50%);
+  width:420px;height:300px;
+  background:radial-gradient(ellipse,rgba(170,255,0,.16),transparent 70%);
+  pointer-events:none;
+}
+.tg-ico{
+  position:relative;width:74px;height:74px;margin:0 auto 24px;
+  border-radius:20px;background:rgba(170,255,0,.1);
+  border:1px solid rgba(170,255,0,.3);
+  display:grid;place-items:center;
+}
+.tg-ico svg{width:38px;height:38px}
+.tg-card h3{
+  position:relative;font-family:'Unbounded';font-weight:500;
+  font-size:24px;margin-bottom:14px;line-height:1.25;
+}
+.tg-card p{
+  position:relative;font-size:16px;line-height:1.65;
+  color:var(--mut);max-width:480px;margin:0 auto 30px;
+}
+.tg-btn{
+  position:relative;display:inline-flex;align-items:center;gap:10px;
+  background:var(--acid);color:#0c0d0a;font-weight:800;font-size:17px;
+  padding:18px 44px;border-radius:50px;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.tg-btn:hover{transform:scale(1.04);background:#fff;box-shadow:0 14px 36px rgba(170,255,0,.3)}
+
+/* ---------- CONTACT ---------- */
+.con-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.con-card{
+  padding:36px;display:flex;flex-direction:column;gap:7px;
+}
+.con-ico{
+  width:54px;height:54px;border-radius:14px;
+  background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.25);
+  display:grid;place-items:center;margin-bottom:14px;
+}
+.con-ico svg{width:26px;height:26px}
+.con-label{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--acid);text-transform:uppercase}
+.con-val{font-family:'Unbounded';font-weight:500;font-size:24px;word-break:break-word}
+.con-card .btn{margin-top:18px;align-self:flex-start;padding:13px 26px;font-size:14px}
+.con-note{
+  text-align:center;margin-top:34px;font-size:15px;color:var(--mut);
+}
+.con-note b{color:var(--white)}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:#08090700;border-top:1px solid rgba(255,255,255,.05);
+  padding:38px 0;text-align:center;
+}
+.foot-mark{
+  font-family:'Unbounded';font-weight:700;font-size:15px;
+  letter-spacing:.04em;margin-bottom:10px;
+}
+.foot-mark .lime{color:var(--acid)}
+.foot-line{font-size:13px;color:var(--mut2);font-weight:500}
+.foot-line .sep{color:var(--acid);margin:0 7px}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+
+/* hero load */
+.hl{opacity:0;transform:translateY(28px);animation:hl .85s cubic-bezier(.2,.7,.2,1) forwards}
+.hl.a1{animation-delay:.1s}
+.hl.a2{animation-delay:.22s}
+.hl.a3{animation-delay:.34s}
+.hl.a4{animation-delay:.46s}
+.hl.a5{animation-delay:.58s}
+@keyframes hl{to{opacity:1;transform:none}}
+.ava-load{opacity:0;animation:avain 1s cubic-bezier(.2,.7,.2,1) .15s forwards}
+@keyframes avain{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:42px;text-align:center}
+  .ava-box,.ava-box img{width:240px;height:240px}
+  .ava-box{order:-1}
+  .eyebrow,.hero-btns{justify-content:center}
+  .hero-tag{margin-left:auto;margin-right:auto}
+  .about-grid{grid-template-columns:1fr}
+  .mob-grid{grid-template-columns:1fr}
+  .con-grid{grid-template-columns:1fr}
+  .story-grid,.advice-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .skill,.skill:nth-child(4),.skill:nth-child(5){grid-column:auto}
+  .timeline{grid-template-columns:1fr;gap:0;padding-left:28px}
+  .timeline::before{left:6px;right:auto;top:6px;bottom:6px;width:1.5px;height:auto;background:linear-gradient(var(--line-hi),var(--line))}
+  .tl-item{padding:0 0 26px}
+  .tl-item::before{left:-28px;top:2px}
+  .tl-item h4{margin-top:6px}
+  .nav-links{
+    position:fixed;top:0;right:0;height:100vh;width:74%;max-width:320px;
+    background:rgba(12,13,10,.97);backdrop-filter:blur(16px);
+    flex-direction:column;justify-content:center;gap:34px;
+    transform:translateX(100%);transition:transform .35s ease;
+    border-left:1px solid var(--line);
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:18px}
+  .burger{display:flex}
+  .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.x span:nth-child(2){opacity:0}
+  .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .con-val{font-size:20px}
+}
+@media(max-width:560px){
+  .eyebrow{flex-direction:column;gap:6px}
+  .eyebrow::before,.eb-dot{display:none}
+  .wrap{padding:0 18px}
+  nav{padding:14px 18px}
+  .sec{padding:74px 0}
+  .card-pad,.mob-card,.con-card,.quote-card,.skill,.advice{padding:26px}
+  .sub-head,.advice-grid{margin-top:46px}
+  .tg-card{padding:40px 24px}
+  .gallery{grid-template-columns:1fr 1fr;gap:11px}
+  .esn img{height:240px}
+  .hero{padding:120px 0 90px}
+  .shot .scap{opacity:1;transform:none}
+  .masonry{columns:2;column-gap:10px}
+  .m-tile{margin-bottom:10px;border-radius:12px}
+  .m-tile figcaption{opacity:1;transform:none;font-size:11px;padding:24px 10px 8px}
+  .filters{gap:8px}
+  .chip{padding:9px 14px;font-size:13px}
+  .lightbox{padding:60px 12px}
+  .lb-prev,.lb-next{top:auto;bottom:18px;transform:none}
+  .lb-prev{left:calc(50% - 60px)}
+  .lb-next{right:calc(50% - 60px)}
+  .lightbox img{max-height:calc(100vh - 190px)}
+
+}
+
+/* ---------- HANDWRITTEN ACCENTS ---------- */
+.uni-link{color:inherit;text-decoration:none;border-bottom:1.5px solid rgba(170,255,0,.4);transition:border-color .2s}
+.uni-link:hover{border-color:var(--acid)}
+.sec-sub,.shot .scap,.esn .ecap,.m-tile figcaption,.lightbox figcaption{font-family:'Caveat','Manrope',cursive;font-weight:600;letter-spacing:.005em}
+.sec-sub{font-size:26px;line-height:1.3}
+.shot .scap,.m-tile figcaption{font-size:19px;line-height:1.2}
+.esn .ecap{font-size:23px;line-height:1.25}
+.lightbox figcaption{font-size:22px}
+@media(max-width:560px){
+  .sec-sub{font-size:23px}
+  .shot .scap{font-size:17px}
+  .m-tile figcaption{font-size:16px}
+  .esn .ecap{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#top" class="logo">
+    <span class="mark">МГ</span>
+    <span>Матвей Грицик</span>
+  </a>
+  <div class="nav-links" id="navlinks">
+    <a href="#about">О себе</a>
+    <a href="#istanbul">Стамбул</a>
+    <a href="#life">Галерея</a>
+    <a href="#story">Итоги</a>
+    <a href="#contact">Контакты</a>
+    <a href="https://matvei.pro/" target="_blank" rel="noopener">Резюме</a>
+    <a href="https://t.me/mattt_ttthew" target="_blank" rel="noopener" class="nav-tg">Telegram</a>
+  </div>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="ava-box ava-load">
+      <div class="ava-glow"></div>
+      <div class="ava-ring"></div>
+      <img src="assets/avatar.png" alt="Матвей Грицик">
+      <div class="ava-tag">ИТМО · 3 курс</div>
+    </div>
+    <div class="hero-text">
+      <span class="eyebrow hl a1">Бизнес-информатика<span class="eb-dot"> · </span><span>Университет&nbsp;ИТМО</span></span>
+      <h1 class="hl a2">Матвей<br><span class="lime">Грицик</span></h1>
+      <p class="hero-tag hl a3">
+        Студент программы «Бизнес-информатика» <b>Университета&nbsp;ИТМО</b>. Организую студенческие мероприятия, тренирую танцоров, а&nbsp;весной 2026 года провёл семестр по обмену в&nbsp;Стамбуле.
+      </p>
+      <div class="hero-btns hl a4">
+        <a href="#istanbul" class="btn btn-fill">Мой опыт в Стамбуле ↓</a>
+        <a href="https://t.me/mattt_ttthew" target="_blank" rel="noopener" class="btn btn-out">Написать в Telegram →</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label"><span class="num">01</span> · О себе</span>
+      <h2 class="sec-title">Кто я</h2>
+    </div>
+    <div class="about-grid">
+      <div class="card card-pad about-text reveal">
+        <p>
+          Привет! Меня зовут Матвей, я учусь на программе «Бизнес-информатика»
+          Университета ИТМО. Сейчас работаю ассистентом менеджера продукта в СКБ Контур
+          и менеджером продуктов внутренней автоматизации и цифровой трансформации в компании «Система ПБ».
+        </p>
+        <p style="margin-top:16px">
+          В 2024 году поступил без вступительных испытаний благодаря Толстовской
+          олимпиаде школьников по обществознанию. Программа зацепила меня с первого знакомства,
+          и о своём выборе я ни разу не пожалел.
+        </p>
+        <p style="margin-top:16px">
+          Помимо учёбы и работы организую крупные мероприятия Университета ИТМО:
+          Startup Night, Itmotion
+          и студенческую вечеринку «МОДУЛЬ». Помогаю первокурсникам ФТМИ освоиться на новом месте
+          и тренирую сборную университета по бальным танцам.
+        </p>
+        <p style="margin-top:16px">
+          В свободное время играю на гитаре, в настольный теннис и волейбол.
+        </p>
+        <div class="divider"></div>
+        <div class="hobbies">
+          <span class="pill">💃 Бальные танцы</span>
+          <span class="pill">🎸 Гитара</span>
+          <span class="pill">🏓 Настольный теннис</span>
+          <span class="pill">🏐 Волейбол</span>
+          <span class="pill">🎉 Организация мероприятий</span>
+          <span class="pill">🤝 Волонтёрство</span>
+        </div>
+        <a href="https://matvei.pro/" target="_blank" rel="noopener" class="resume-link">Подробнее об опыте и проектах — в резюме ↗</a>
+      </div>
+      <div class="about-photo reveal d1">
+        <img loading="lazy" src="assets/about.webp" alt="Матвей вечером в Стамбуле">
+        <div class="photo-chip">✈️ Обмен 2026</div>
+        <div class="cap"><span>📍</span> Стамбул · 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOBILITY ============ -->
+<section class="sec sec-alt" id="mobility">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label"><span class="num">02</span> · Об обмене</span>
+      <h2 class="sec-title">Академическая<br>мобильность</h2>
+      <p class="sec-sub">Возможность провести семестр или год в зарубежном университете, сохранив место и статус студента в своём вузе.</p>
+    </div>
+    <div class="mob-grid">
+      <div class="card mob-card reveal">
+        <span class="idx">01</span>
+        <div class="mob-icon">🌍</div>
+        <h3>Что это?</h3>
+        <p>Ты едешь в партнёрский университет и учишься там по согласованному плану, а после возвращения дисциплины засчитываются в родном вузе.</p>
+      </div>
+      <div class="card mob-card reveal d1">
+        <span class="idx">02</span>
+        <div class="mob-icon">🚀</div>
+        <h3>Зачем это нужно?</h3>
+        <p>Международная среда, знакомства со студентами со всего мира, другой подход к образованию и опыт, который не получить в привычной аудитории.</p>
+      </div>
+      <div class="card mob-card reveal d2">
+        <span class="idx">03</span>
+        <div class="mob-icon">📋</div>
+        <h3>Как попасть?</h3>
+        <p>Пройти конкурсный отбор Университета ИТМО, подтвердить уровень языка и собрать документы. На каждом этапе помогают международный отдел и образовательная программа.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ISTANBUL ============ -->
+<section class="sec" id="istanbul">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label"><span class="num">03</span> · Личный опыт</span>
+      <h2 class="sec-title">Семестр в Стамбуле</h2>
+      <p class="sec-sub"><a class="uni-link" href="https://www.ozyegin.edu.tr/en" target="_blank" rel="noopener">Özyeğin Üniversitesi ↗</a> · Стамбул, Турция</p>
+    </div>
+    <p class="reveal" style="font-size:17px;line-height:1.75;color:#cdcfc6;max-width:720px;margin-top:-26px">
+      Весенний семестр 2026 года я провёл в Özyeğin University — частной бизнес-школе Стамбула. Все занятия шли
+      на английском, рядом учились студенты со всего мира, по кампусу гуляли коты,
+      а сразу за воротами начинался один из самых удивительных городов планеты.
+    </p>
+    <div class="facts reveal d1">
+      <div class="fact">🎓 <b>Özyeğin Üniversitesi</b></div>
+      <div class="fact">📍 <b>Стамбул</b>, Турция</div>
+      <div class="fact">🗣️ Занятия на <b>английском</b></div>
+      <div class="fact">🗓️ <b>Февраль — июнь</b> 2026</div>
+    </div>
+
+    <div class="video-block reveal">
+      <div class="video-head">
+        <span class="vlabel">📹 Видео-история</span>
+        <h3>Как это было: рассказываю прямо с кампуса</h3>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/video-poster.jpg" playsinline>
+          <source src="assets/istanbul.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="shot reveal"><div class="pin"></div><img loading="lazy" src="assets/campus.jpg" alt="Кампус Özyeğin"><div class="scap">Кампус Özyeğin Üniversitesi</div></div>
+      <div class="shot reveal d1"><div class="pin"></div><img loading="lazy" src="assets/hall.jpg" alt="Холл с флагами"><div class="scap">Холл с флагами стран мира</div></div>
+      <div class="shot reveal d2"><div class="pin"></div><img loading="lazy" src="assets/library.jpg" alt="Библиотека"><div class="scap">Библиотека · Quiet Zone</div></div>
+      <div class="shot reveal"><div class="pin"></div><img loading="lazy" src="assets/evening.jpg" alt="Вечерний Стамбул"><div class="scap">Вечерний Стамбул</div></div>
+      <div class="shot reveal d1"><div class="pin"></div><img loading="lazy" src="assets/cistern.jpg" alt="Цистерна Базилика"><div class="scap">Цистерна Базилика</div></div>
+      <div class="shot reveal d2"><div class="pin"></div><img loading="lazy" src="assets/galata.jpg" alt="Галатская башня"><div class="scap">Галатская башня</div></div>
+      <div class="shot reveal"><div class="pin"></div><img loading="lazy" src="assets/cat.jpg" alt="Стамбульский кот"><div class="scap">Местный житель 🐈</div></div>
+      <div class="shot reveal d1"><div class="pin"></div><img loading="lazy" src="assets/bosphorus.jpg" alt="Босфор"><div class="scap">Вид на Босфор</div></div>
+      <div class="shot reveal d2"><div class="pin"></div><img loading="lazy" src="assets/streets.jpg" alt="Улочки Стамбула"><div class="scap">Солнечные улочки Стамбула</div></div>
+    </div>
+
+    <div class="esn reveal">
+      <img loading="lazy" src="assets/esn.jpg" alt="ESN Erasmus">
+      <div class="ecap"><span>🎓 ESN Erasmus</span> — международное сообщество студентов по обмену</div>
+    </div>
+
+    <h3 class="sub-head reveal">Хронология <span>обмена</span></h3>
+    <ol class="timeline">
+      <li class="tl-item reveal">
+        <span class="tl-date">Февраль 2026</span>
+        <h4>Прилёт и первые пары</h4>
+        <p>Новый кампус, курсы по экономике и бухгалтерскому учёту на английском, обустройство и первые знакомства.</p>
+      </li>
+      <li class="tl-item reveal d1">
+        <span class="tl-date">Март — апрель</span>
+        <h4>Промежуточные экзамены</h4>
+        <p>Мидтермы, проекты в международных командах и долгие вечера в библиотеке.</p>
+      </li>
+      <li class="tl-item reveal d2">
+        <span class="tl-date">Весна</span>
+        <h4>Турция за пределами Стамбула</h4>
+        <p>Поездки с ESN: Бурса, горы и новые друзья из разных стран.</p>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-date">Июнь 2026</span>
+        <h4>Конец семестра</h4>
+        <p>Финальные экзамены, прощание с друзьями и возвращение в Петербург.</p>
+      </li>
+      <li class="tl-item tl-hi reveal d1">
+        <span class="tl-date">Сентябрь 2026</span>
+        <h4>Снова в Стамбуле, но уже как спикер</h4>
+        <p>Выступил с докладом «Prioritizing AI Adoption Across Financial Business Processes» на 22-м Международном форуме по предпринимательству (IEF), который прошёл при участии Özyeğin University.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ LIFE / GALLERY ============ -->
+<section class="sec sec-alt" id="life">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label"><span class="num">04</span> · Будни</span>
+      <h2 class="sec-title">Жизнь<br>на обмене</h2>
+      <p class="sec-sub">Пары, кампус, еда, город и поездки — из чего состоял обычный семестр.</p>
+    </div>
+    <div class="filters reveal" role="tablist">
+      <button class="chip on" data-f="all">Всё</button>
+      <button class="chip" data-f="study">📚 Учёба</button>
+      <button class="chip" data-f="campus">🏫 Кампус</button>
+      <button class="chip" data-f="food">🥯 Еда</button>
+      <button class="chip" data-f="city">🌉 Город</button>
+      <button class="chip" data-f="trips">🏔️ Поездки</button>
+    </div>
+    <div class="masonry">
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/lecture-stats.webp" data-full="assets/gallery/lecture-stats-full.webp" alt="Проверка гипотез у доски"><figcaption>Проверка гипотез у доски</figcaption></figure>
+      <figure class="m-tile" data-cat="trips"><img loading="lazy" src="assets/gallery/bursa-jump.webp" data-full="assets/gallery/bursa-jump-full.webp" alt="Бурса · выезд с ESN"><figcaption>Бурса · выезд с ESN</figcaption></figure>
+      <figure class="m-tile" data-cat="campus"><img loading="lazy" src="assets/gallery/cafeteria-cat.webp" data-full="assets/gallery/cafeteria-cat-full.webp" alt="Соседи по столовой"><figcaption>Соседи по столовой</figcaption></figure>
+      <figure class="m-tile" data-cat="food"><img loading="lazy" src="assets/gallery/breakfast-simit.webp" data-full="assets/gallery/breakfast-simit-full.webp" alt="Турецкий завтрак с симитом"><figcaption>Турецкий завтрак с симитом</figcaption></figure>
+      <figure class="m-tile" data-cat="city"><img loading="lazy" src="assets/gallery/uskudar.webp" data-full="assets/gallery/uskudar-full.webp" alt="Ускюдар · азиатский берег"><figcaption>Ускюдар · азиатский берег</figcaption></figure>
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/quiz-turkish.webp" data-full="assets/gallery/quiz-turkish-full.webp" alt="Квиз на паре: к какой языковой семье относится турецкий"><figcaption>Квиз на паре: к какой языковой семье относится турецкий</figcaption></figure>
+      <figure class="m-tile" data-cat="campus"><img loading="lazy" src="assets/gallery/sunset-stadium.webp" data-full="assets/gallery/sunset-stadium-full.webp" alt="Закат над стадионом кампуса"><figcaption>Закат над стадионом кампуса</figcaption></figure>
+      <figure class="m-tile" data-cat="city"><img loading="lazy" src="assets/gallery/bosphorus-palace.webp" data-full="assets/gallery/bosphorus-palace-full.webp" alt="Набережная Босфора"><figcaption>Набережная Босфора</figcaption></figure>
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/lecture-hypothesis.webp" data-full="assets/gallery/lecture-hypothesis-full.webp" alt="Лекция по статистике"><figcaption>Лекция по статистике</figcaption></figure>
+      <figure class="m-tile" data-cat="trips"><img loading="lazy" src="assets/gallery/bursa-panorama.webp" data-full="assets/gallery/bursa-panorama-full.webp" alt="Бурса с высоты"><figcaption>Бурса с высоты</figcaption></figure>
+      <figure class="m-tile" data-cat="food"><img loading="lazy" src="assets/gallery/lunch.webp" data-full="assets/gallery/lunch-full.webp" alt="Обед между парами"><figcaption>Обед между парами</figcaption></figure>
+      <figure class="m-tile" data-cat="campus"><img loading="lazy" src="assets/gallery/atrium.webp" data-full="assets/gallery/atrium-full.webp" alt="Атриум учебного корпуса"><figcaption>Атриум учебного корпуса</figcaption></figure>
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/presentation.webp" data-full="assets/gallery/presentation-full.webp" alt="Защита проекта"><figcaption>Защита проекта</figcaption></figure>
+      <figure class="m-tile" data-cat="city"><img loading="lazy" src="assets/gallery/exchange-rates.webp" data-full="assets/gallery/exchange-rates-full.webp" alt="Курс лиры — отдельный вид спорта"><figcaption>Курс лиры — отдельный вид спорта</figcaption></figure>
+      <figure class="m-tile" data-cat="campus"><img loading="lazy" src="assets/gallery/gym.webp" data-full="assets/gallery/gym-full.webp" alt="Спортзал кампуса"><figcaption>Спортзал кампуса</figcaption></figure>
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/midterm.webp" data-full="assets/gallery/midterm-full.webp" alt="Объявление о мидтерме"><figcaption>Объявление о мидтерме</figcaption></figure>
+      <figure class="m-tile" data-cat="food"><img loading="lazy" src="assets/gallery/cafeteria-tray.webp" data-full="assets/gallery/cafeteria-tray-full.webp" alt="Студенческий обед с айраном"><figcaption>Студенческий обед с айраном</figcaption></figure>
+      <figure class="m-tile" data-cat="city"><img loading="lazy" src="assets/gallery/ikea.webp" data-full="assets/gallery/ikea-full.webp" alt="Обустройство на новом месте"><figcaption>Обустройство на новом месте</figcaption></figure>
+      <figure class="m-tile" data-cat="campus"><img loading="lazy" src="assets/gallery/campus-alley.webp" data-full="assets/gallery/campus-alley-full.webp" alt="Аллея кампуса"><figcaption>Аллея кампуса</figcaption></figure>
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/whiteboard.webp" data-full="assets/gallery/whiteboard-full.webp" alt="Доска после пары"><figcaption>Доска после пары</figcaption></figure>
+      <figure class="m-tile" data-cat="trips"><img loading="lazy" src="assets/gallery/bursa-street.webp" data-full="assets/gallery/bursa-street-full.webp" alt="Улицы Бурсы"><figcaption>Улицы Бурсы</figcaption></figure>
+      <figure class="m-tile" data-cat="campus"><img loading="lazy" src="assets/gallery/library-shelves.webp" data-full="assets/gallery/library-shelves-full.webp" alt="Библиотека"><figcaption>Библиотека</figcaption></figure>
+      <figure class="m-tile" data-cat="study"><img loading="lazy" src="assets/gallery/lecture.webp" data-full="assets/gallery/lecture-full.webp" alt="Лекция в аудитории"><figcaption>Лекция в аудитории</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-btn lb-close" aria-label="Закрыть">✕</button>
+  <button class="lb-btn lb-prev" aria-label="Назад">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-btn lb-next" aria-label="Вперёд">›</button>
+</div>
+
+<!-- ============ STORY ============ -->
+<section class="sec" id="story">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label"><span class="num">05</span> · Итоги обмена</span>
+      <h2 class="sec-title">Что дал мне<br>обмен</h2>
+      <p class="sec-sub">Полгода, которые подтолкнули меня к развитию сразу в нескольких сферах жизни.</p>
+    </div>
+
+    <div class="story-grid">
+      <div class="card card-pad story-text reveal">
+        <p>
+          Об академической мобильности нам рассказали ещё на первой встрече первокурсников.
+          Я сразу расписал цели на каждый год учёбы и решил, что четвёртый семестр
+          проведу за границей.
+        </p>
+        <p>
+          Сложнее всего оказалось не уехать, а подготовиться: и морально, и с документами.
+          Справки, бюджет, согласование учебного плана и дисциплин отнимали много сил,
+          но мысль о том, что ждёт впереди, мотивировала сильнее.
+        </p>
+        <p>
+          На месте меня ждали серьёзная учёба, другая среда, новые люди и иной взгляд
+          на привычные вещи. Иногда я скучал по дому, семье, друзьям и родному университету,
+          но рад, что решился прожить часть жизни по-другому.
+        </p>
+      </div>
+      <div class="card quote-card reveal d1">
+        <div class="quote-mark">“</div>
+        <blockquote>
+          Обмен — это сложное испытание, но после него ты становишься <span>другим человеком</span>
+          в лучшем смысле этого слова.
+        </blockquote>
+      </div>
+    </div>
+
+    <h3 class="sub-head reveal">Пять навыков, <span>которые я развил</span></h3>
+    <div class="skills-grid">
+      <div class="card skill reveal">
+        <span class="idx">01</span>
+        <h4>Иностранный язык</h4>
+        <p>На парах и в повседневной жизни язык ощущается совсем не так, как на курсах. Это полное погружение.</p>
+      </div>
+      <div class="card skill reveal d1">
+        <span class="idx">02</span>
+        <h4>Работа в международной команде</h4>
+        <p>В одной группе оказываются люди из разных стран, с разными ценностями и целями. Прийти с ними к общему результату — отдельное умение.</p>
+      </div>
+      <div class="card skill reveal d2">
+        <span class="idx">03</span>
+        <h4>Концентрация и самоконтроль</h4>
+        <p>Научился заставлять себя работать и тратить свободное время на учёбу и проекты.</p>
+      </div>
+      <div class="card skill reveal">
+        <span class="idx">04</span>
+        <h4>Расстановка приоритетов</h4>
+        <p>Задачи, проекты и дедлайны навалились одновременно, поэтому пришлось выбирать главное и не браться за всё сразу.</p>
+      </div>
+      <div class="card skill reveal d1">
+        <span class="idx">05</span>
+        <h4>Адаптивность</h4>
+        <p>Теперь в любой незнакомой ситуации я быстро ориентируюсь и нахожу решение.</p>
+      </div>
+    </div>
+
+
+    <div class="advice-grid">
+      <div class="card advice reveal">
+        <span class="vlabel">💡 Тем, кто думает об обмене</span>
+        <p class="big">Главное — <span>не бояться</span>.</p>
+        <p>
+          Помните, к чему вы стремитесь, и пусть академическая мобильность станет ступенькой
+          на пути к этой цели. Не забывайте о мечте на протяжении всего обмена и делайте всё,
+          чтобы с каждым днём она становилась ближе.
+        </p>
+      </div>
+      <div class="card advice reveal d1">
+        <span class="vlabel">🧡 Абитуриентам ФТМИ</span>
+        <p class="big">Станьте теми изменениями, которые хотите видеть в мире, — и тогда <span>он откроется вам</span>!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TELEGRAM ============ -->
+<section class="sec sec-alt" id="diary">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin:0 auto 44px">
+      <span class="sec-label" style="justify-content:center"><span class="num">06</span> · Следи за мной</span>
+      <h2 class="sec-title">Дневник обмена</h2>
+    </div>
+    <div class="card tg-card reveal d1">
+      <div class="glow2"></div>
+      <div class="tg-ico">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21.9 4.3 18.6 20c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16L16.97 6.5c.41-.36-.09-.56-.63-.2L6.7 12.5l-5.07-1.59c-1.1-.34-1.12-1.1.23-1.63l19.8-7.63c.92-.34 1.72.2 1.43 1.65Z" fill="#aaff00"/></svg>
+      </div>
+      <h3>Канал Университета ИТМО об академической мобильности</h3>
+      <p>
+        Во время обмена я вёл этот канал: каждую неделю рассказывал об учёбе, жизни
+        и обо всём, что происходило в Стамбуле. Реальные истории без прикрас.
+      </p>
+      <a href="https://t.me/itmo_exchange/3244" target="_blank" rel="noopener" class="tg-btn">Открыть канал →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label"><span class="num">07</span> · Связь</span>
+      <h2 class="sec-title">Написать мне</h2>
+    </div>
+    <div class="con-grid">
+      <div class="card con-card reveal">
+        <div class="con-ico">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21.9 4.3 18.6 20c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16L16.97 6.5c.41-.36-.09-.56-.63-.2L6.7 12.5l-5.07-1.59c-1.1-.34-1.12-1.1.23-1.63l19.8-7.63c.92-.34 1.72.2 1.43 1.65Z" fill="#aaff00"/></svg>
+        </div>
+        <span class="con-label">Telegram</span>
+        <span class="con-val">@mattt_ttthew</span>
+        <a href="https://t.me/mattt_ttthew" target="_blank" rel="noopener" class="btn btn-fill">Написать →</a>
+      </div>
+      <div class="card con-card reveal d1">
+        <div class="con-ico">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.4 0 .8-.3 1l-2.2 2.1Z" fill="#aaff00"/></svg>
+        </div>
+        <span class="con-label">Телефон</span>
+        <span class="con-val">+7 952 282-79-94</span>
+        <a href="tel:+79522827994" class="btn btn-fill">Позвонить →</a>
+      </div>
+      <div class="card con-card reveal d2">
+        <div class="con-ico">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2.5L17.5 8H14V4.5ZM8 12h8v1.6H8V12Zm0 3.4h8V17H8v-1.6Zm0-6.8h4v1.6H8V8.6Z" fill="#aaff00"/></svg>
+        </div>
+        <span class="con-label">Резюме</span>
+        <span class="con-val">Опыт и проекты</span>
+        <a href="https://matvei.pro/" target="_blank" rel="noopener" class="btn btn-fill">Открыть ↗</a>
+      </div>
+    </div>
+    <p class="con-note reveal d3">
+      Хочешь узнать больше об академической мобильности или просто пообщаться? Пиши — отвечу!
+    </p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">МАТВЕЙ <span class="lime">ГРИЦИК</span></div>
+    <div class="foot-line">
+      Университет ИТМО <span class="sep">•</span> Бизнес-информатика <span class="sep">•</span> Академическая мобильность
+    </div>
+  </div>
+</footer>
+
+<script>
+// nav scroll state
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+
+// burger
+const burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('x');links.classList.toggle('open')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('x');links.classList.remove('open')}));
+
+// scroll reveal
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// gallery filters
+const tiles=[...document.querySelectorAll('.m-tile')];
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));
+  const f=c.dataset.f;
+  tiles.forEach(t=>t.classList.toggle('hide',f!=='all'&&t.dataset.cat!==f));
+}));
+
+// lightbox
+const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('figcaption');
+let cur=0;
+const visible=()=>tiles.filter(t=>!t.classList.contains('hide'));
+function show(i){
+  const v=visible();cur=(i+v.length)%v.length;
+  const img=v[cur].querySelector('img');
+  lbImg.src=img.dataset.full;lbImg.alt=img.alt;lbCap.textContent=img.alt;
+}
+function openLb(t){show(visible().indexOf(t));lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+tiles.forEach(t=>t.addEventListener('click',()=>openLb(t)));
+lb.querySelector('.lb-close').addEventListener('click',closeLb);
+lb.querySelector('.lb-prev').addEventListener('click',e=>{e.stopPropagation();show(cur-1)});
+lb.querySelector('.lb-next').addEventListener('click',e=>{e.stopPropagation();show(cur+1)});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')show(cur-1);
+  if(e.key==='ArrowRight')show(cur+1);
+});
+let tx=null;
+lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;
+  if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));
+});
+</script>
+</body>
+</html>
